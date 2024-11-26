@@ -1,0 +1,61 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowedServices",
+            "Effect": "Allow",
+            "Action": [
+                "batch:*",
+                "cloudwatch:*",
+                "logs:*",
+                "ec2:*",
+                "autoscaling:*",
+                "ebs:*",
+                "ecr:*",
+                "ecs:*",
+                "kms:*",
+                "lambda:*",
+                "rds:*",
+                "s3:*",
+                "ssm:*",
+                "cloudformation:*",
+                "cloudtrail:*",
+                "dynamodb:*",
+                "imagebuilder:*",
+                "route53:*",
+                "sns:*",
+                "fsx:*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "AllowedIAM",
+            "Effect": "Allow",
+            "Action": [
+                "iam:Get*",
+                "iam:List*",
+                "iam:Generate*",
+                "iam:Simulate*",
+                "iam:Add*",
+                "iam:EnableMFADevice",
+                "iam:Remove*",
+                "iam:Update*",
+                "iam:Attach*",
+                "iam:Tag*",
+                "iam:Untag*",
+                "iam:PutGroupPolicy",
+                "iam:PutRolePolicy",
+                "iam:Create*",
+                "iam:PassRole",
+                "iam:DeleteInstanceProfile",
+                "iam:DeleteServiceLinkedRole",
+                "iam:DeleteRolePolicy",
+                "iam:DeleteRole",
+                "iam:DetachRolePolicy",
+                "iam:DeletePolicy",
+                "iam:DeletePolicyVersion"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

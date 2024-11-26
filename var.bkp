@@ -1,0 +1,47 @@
+# List of S3 bucket names
+variable "bucket_names" {
+  type    = list(string)
+}
+
+# modules/sg/variables.tf
+variable "sg_names" {
+  description = "List of security group names"
+  type        = list(string)
+}
+
+variable "sg_descriptions" {
+  description = "Descriptions for security groups"
+  type        = map(string)
+}
+
+variable "sg_ingress_rules" {
+  description = "List of ingress rules for each security group"
+  type        = map(list(object({
+    from_port   = number
+    to_port     = number
+    protocol    = string
+    cidr_blocks = list(string)
+  })))
+}
+
+variable "sg_egress_rules" {
+  description = "List of egress rules for each security group"
+  type        = map(list(object({
+    from_port   = number
+    to_port     = number
+    protocol    = string
+    cidr_blocks = list(string)
+  })))
+}
+
+# Permissions boundary for gitlab user
+variable "permission_boundary" {
+  type    = string
+  default = "AwsPermisisonBoundary"
+}
+
+# IAM Role for SSM
+variable "SSM_Role" {
+  type    = string
+  default = "AWSSystemsManagerDefaultEC2InstanceManagementRole"
+}
